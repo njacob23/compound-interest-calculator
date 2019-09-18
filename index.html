@@ -6,41 +6,64 @@
 	<title>Compound Interest Calculator</title>
 	<meta name="description" content="DESCRIPTION">
 	<link rel="stylesheet" href="calculator.css">
-
-	<!--[if lt IE 9]>
-	<script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	<style media="screen">
+	</style>
 </head>
 <body>
-	<h1>Compound Interest Calculator</h1>
+	<h1>
+		<center>Compound Interest Calculator
+		</center>
+	</h1>
+	<div class="calculator_body">
+		<div class="calculator_row">
+			<label for="amount" class="calculator_label2">Starting Amount</label>
+			<div class="calculator_input">
+				<input type="number" class="calculator-input" name="amount" value="1000">
+						<h5>$</h5>
+			</div>
+	</div>
+		<p class="calculator_description"> Starting Amount refers to the amount of money currently in your bank account.</p>
+		<div class="calculator_row">
+			<label for="interest" class="calculator_label2">Interest Rate</label>
+			<div class="calculator_input">
+				<input type="number" class="calculator-input" name="interest" value="2">
+				<h7>%</h7>
+			</div>
+		</div>
+		<p class="calculator_description"> Interest rate refers to a tiny percentage of money gained for banking.</p>
+		<div class="calculator_row">
+			<label for="contribution" class="calculator_label">Annual Contribution</label>
+			<div class="calculator_input">
+				<input type="number" class="calculator-input" name="contribution" value="0">
+				<h6>$</h6>
+			</div>
+		</div>
+		<p class="calculator_description"> Annual Contribution is the amount of money you put away for savings yearly.</p>
+		<div class="calculator_row">
+			<label for="duration" class="calculator_label2">Duration(Years)</label>
+			<div class="calculator_input">
+				<input type="number" class="calculator-input" name="duration" value="10">
+			</div>
+		</div>
+	</div>
 
-	<form>
-		<ul>
-			<li>
-				<label for="amount">Starting Amount($)*:</label>
-				<input type="number" name="amount" value="1000">
-			</li>
-			<li>
-				<label for="interest">Interest Rate(%)*:</label>
-				<input type="number" name="interest" value="2">
-			</li>
-			<li>
-				<label for="contribution">Annual Contribution($):</label>
-				<input type="number" name="contribution" value="0">
-			</li>
-			<li>
-				<label for="duration">Duration(Years)*:</label>
-				<input type="number" name="duration" value="10">
-			</li>
-		</ul>
-		<button type="button" onclick="calculate()">Submit</button>
-	</form>
+	<button type="button" onclick="calculate(); calculateGrowth()">Submit</button>
 	<section>
 		<h2>Results</h2>
-		<p>Starting amount: <strong class="starting-val">$1000</strong></p>
-		<p>Contribution total: <strong class="contribution-val">$0.00</strong></p>
-		<p>Final Amount in <strong class="duration-val">10</strong> years: <strong class="final-val">$1218.99</strong></p>
+		<h4>Final Amount in <strong class="duration-val">10</strong> years: <strong class="final-val">$1218.99</strong></h4>
+		<ul class="growth-list"></ul>
+		<h3>Starting amount: <strong class="starting-val">$1000</strong></h3>
+		<h3>Contribution total: <strong class="contribution-val">$0.00</strong></h3>
+		<br></br>
+		<canvas id="piechart" style="display: block; height: 483px; width: 967px;" width="1634" height="666" class="chartjs-render-monitor">
+		</canvas>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0">
+		</script>
+		<script type="text/javascript" src="calculator.js"></script>
 	</section>
-	<script type="text/javascript" src="calculator.js"></script>
+
 </body>
+
 </html>
