@@ -37,10 +37,10 @@ const formatValue = (value, type) => {
 
 // Display Results
 const displayResults = (amount, duration, totalContribution, totalReturn, finalBalance) => {
-	startingVal[0].innerHTML = '$' + amount;
-	contributionVal[0].innerHTML = '$' + totalContribution;
+	startingVal[0].innerHTML = amount;
+	contributionVal[0].innerHTML = otalContribution;
 	durationVal[0].innerHTML = duration;
-	finalVal[0].innerHTML = '$' + finalBalance;
+	finalVal[0].innerHTML = finalBalance;
 }
 
 // Calculate
